@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Request borrow money</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .footer {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Request Borrow</h1>
+    <p>Dear <%= lenderEmail %>,</p>
+    <p>You have one request for borrow money from one user</p>
+    <p>Here is the information of that user</p>
+    <p>Email: <%= borrowerEmail %></p>
+    <p>Owner address: <%= borrowerAddress %></p>
+    <p>Please go to the website to verify the borrower is have the NFT you want to take or not</p>
+    <p class="footer">Thank you, Tech Wizards Team</p>
+  </body>
+</html>

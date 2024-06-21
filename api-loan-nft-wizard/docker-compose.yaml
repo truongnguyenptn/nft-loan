@@ -1,0 +1,37 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+     - 'POSTGRES_USER=${DB_USER}'
+     - 'POSTGRES_PASSWORD=${DB_PASS}'
+     - 'POSTGRES_DB=apiWebhookHelius'
+    ports:
+      - '5433:${DB_PORT}'
+    volumes:
+      - db:/var/lib/pg
+  api:
+    container_name: api-webhook-helius
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: api-helius-webhooks
+    depends_on:
+      - db
+    ports:
+      - '${APP_PORT}:${APP_PORT}'
+    environment:
+      DB_HOST: db
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_NAME}
+    links:
+      - db
+    volumes:
+      - ./:/src
+volumes:
+  db:
+    driver: local

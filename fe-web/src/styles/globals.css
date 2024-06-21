@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-family: 'Inter', sans-serif;
+@primary-color: #0d8e8b;
+@secondary-color: #1f2024;
+@error: #f74360;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary-color: @primary-color;
+  --secondary-color: @secondary-color;
+  --grey-primary: @grey-primary;
+  --grey-primary-200: @grey-primary-200;
+  --grey-primary-300: @grey-primary-300;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.elusiv-button {
+  background-color: #22c35e;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: "DM Sans", "Roboto", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 24px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.frame {
+  width: 345px;
+  background-color: hsl(216, 50%, 16%);
+  margin: 10rem auto;
+  border-radius: 15px;
+  padding: 1.5rem;
+  color:hsl(0, 0%, 100%);
+}
+
+.art, .art-pic {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0,255,247, .5);
+  position: absolute ;
+  border-radius: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: .5s;
+}
+
+.overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.headingOffer {
+  padding: 1rem 0;
+  font-weight: 400;
+}
+
+.info {
+  font-weight: 200;
+  color: hsl(215, 51%, 70%);
+  margin-bottom: 1rem;
+}
+
+.bet {
+  display: inline-block;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  /* border-bottom: 1px solid hsl(215, 32%, 27%); */
+}
+
+.time, .price {
+  display: flex;
+  align-items: center;
+}
+
+.time p, .price p {
+  font-size: 15px;
+  color: hsl(215, 51%, 70%);
+  margin-left: .5rem;
+}
+
+.price p {
+  color: hsl(178, 100%, 50%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+}
+
+.attribution a {
+  color: hsl(178, 100%, 50%);
+}
+
+.profile {
+  padding : 1rem 0;
+  padding-bottom: .5;
+  padding-top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.profile p {
+  font-size: 15px;
+  font-weight: 200;
+  color: hsl(215, 51%, 70%);
+}
+
+.author-name {
+  color:hsl(0, 0%, 100%);
+}
+
+.profile-pic {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.author-name:hover, .header:hover {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .frame {
+      margin: 5rem auto;
+  }
+}
